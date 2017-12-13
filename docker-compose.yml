@@ -1,0 +1,10 @@
+version: "3"
+services:
+  app:
+    image: nginx:latest
+    ports:
+      - "8443:8443"
+    volumes:
+      - ./dev:/etc/nginx/conf.d
+    extra_hosts:
+      - "dockerhost:${DOCKERHOST}"
